@@ -19,20 +19,20 @@
     </style>
 </head>
 <body>
-    <iframe id="pdfViewer" src="Inventaire TCD LAUREA.pdf"></iframe>
+    <iframe id="pngViewer" src="Inventaire TCD LAUREA.png"></iframe>
     <script>
-        // Tableau des chemins des fichiers PDF à afficher
-        var pdfFiles = [
-            "Inventaire TCD LAUREA.pdf",
-            "Inventaire TCD LAUREA 2.pdf"
+        // Tableau des chemins des fichiers PNG à afficher
+        var pngFiles = [
+            "Inventaire TCD LAUREA.png",
+            "Inventaire TCD LAUREA 2.png"
         ];
 
         var currentIndex = 0;
-        var pdfViewer = document.getElementById('pdfViewer');
+        var pngViewer = document.getElementById('pdfViewer');
 
-        function changePDF() {
-            currentIndex = (currentIndex + 1) % pdfFiles.length;
-            pdfViewer.src = pdfFiles[currentIndex];
+        function changePNG() {
+            currentIndex = (currentIndex + 1) % pngFiles.length;
+            pngViewer.src = pdgFiles[currentIndex];
         }
 
         // Appeler la fonction pour changer le PDF toutes les 20 secondes
