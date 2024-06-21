@@ -19,6 +19,25 @@
     </style>
 </head>
 <body>
-    <iframe src="Inventaire TCD LAUREA.pdf"></iframe>
+    
+    <script>
+        // Tableau des chemins des fichiers PDF à afficher
+        var pdfFiles = [
+            "chemin/vers/fichier1.pdf",
+            "chemin/vers/fichier2.pdf"
+        ];
+
+        var currentIndex = 0;
+        var pdfViewer = document.getElementById('pdfViewer');
+
+        function changePDF() {
+            currentIndex = (currentIndex + 1) % pdfFiles.length;
+            pdfViewer.src = pdfFiles[currentIndex];
+        }
+
+        // Appeler la fonction pour changer le PDF toutes les 20 secondes
+        setInterval(changePDF, 20000);  // 20 secondes en millisecondes
+    </script>
+    
 </body>
 </html>
