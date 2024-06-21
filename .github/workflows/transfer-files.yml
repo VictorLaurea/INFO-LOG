@@ -2,7 +2,7 @@ name: Transfer Files to GitHub
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Déclenche toutes les heures (00 minutes de chaque heure)
+    - cron: '23 14 * * *'  # Déclenche toutes les heures (00 minutes de chaque heure)
 
 jobs:
   transfer:
