@@ -1,0 +1,26 @@
+name: Transfer Files to GitHub
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Déclenche toutes les heures (00 minutes de chaque heure)
+
+jobs:
+  transfer:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Copy files to GitHub repository
+        run: |
+          cp "C:/Users/vmorisson/OneDrive - PLENITUDE/Documents/LOGISTIQUE/STOCK/Gestion Stock/Fichiers Inventaire/Inventaire TCD LAUREA.pdf" .
+          cp "C:/Users/vmorisson/OneDrive - PLENITUDE/Documents/LOGISTIQUE/STOCK/Gestion Stock/Fichiers Inventaire/Inventaire TCD LAUREA 2.pdf" .
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add .
+          git commit -m "Update files"
+          git push -f origin HEAD:main
