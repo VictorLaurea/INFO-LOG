@@ -6,6 +6,7 @@ dossier="C:\Users\vmorisson\OneDrive - PLENITUDE\Documents\LOGISTIQUE\STOCK\Gest
 # Ajouter les fichiers à l'index
 git add "$dossier/TCD 1.PNG"
 git add "$dossier/TCD 2.PNG"
+git add "$dossier/index.html"
 
 # Commit avec le message "MAJ" suivi de la date et du numéro de version par journée
 date_version=$(date +'%Y-%m-%d-%H-%M-%S') # Format de date personnalisé
