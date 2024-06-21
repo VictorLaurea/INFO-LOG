@@ -28,15 +28,15 @@
         ];
 
         var currentIndex = 0;
-        var pngViewer = document.getElementById('pdfViewer');
+        var pngViewer = document.getElementById('pngViewer');
 
         function changePNG() {
             currentIndex = (currentIndex + 1) % pngFiles.length;
-            pngViewer.src = pdgFiles[currentIndex];
+            pngViewer.src = pngFiles[currentIndex];
         }
 
         // Appeler la fonction pour changer le PDF toutes les 20 secondes
-        setInterval(changePDF, 20000);  // 20 secondes en millisecondes
+        setInterval(changePNG, 1000);  // 20 secondes en millisecondes
     </script>
     
 </body>
