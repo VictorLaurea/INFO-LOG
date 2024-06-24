@@ -55,6 +55,12 @@
             pngViewer.src = pngFiles[currentIndex];
         }
 
+	// Précharger les images
+        pngFiles.forEach(function(src) {
+            var img = new Image();
+            img.src = src;
+        });
+
         // Appeler la fonction pour changer le PNG toutes les 20 secondes
         setInterval(changePNG, 20000);  // 20 secondes en millisecondes
     </script>
