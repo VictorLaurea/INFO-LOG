@@ -26,45 +26,48 @@
         .image-container img {
             max-width: 100%;
             max-height: 100%;
-            width: auto;
-            height: auto;
             object-fit: contain;
         }
     </style>
 </head>
 <body>
     <div class="image-container">
-        <img id="pngViewer" src="Inventaire TCD LAUREA.PNG" alt="PNG Viewer">
+        <img id="pngViewer" src="Inventaire_TCD_LAUREA.PNG" alt="PNG Viewer">
     </div>
     <script>
         // Tableau des chemins des fichiers PNG à afficher
         var pngFiles = [
+            "Inventaire_TCD_LAUREA.PNG",
             "TCDStock.PNG",
             "SuiviDossiers.PNG"
         ];
 
+        var currentIndex = 0;
+        var pngViewer = document.getElementById('pngViewer');
 
-	// Précharger les images
+        // Ajouter un écouteur pour suivre le chargement de l'image
+        pngViewer.addEventListener('load', function() {
+            console.log('Image chargée : ' + pngViewer.src);
+        });
+
+        // Ajouter un écouteur pour détecter les erreurs de chargement
+        pngViewer.addEventListener('error', function() {
+            console.error('Erreur de chargement de l\'image : ' + pngViewer.src);
+        });
+
+        function changePNG() {
+            currentIndex = (currentIndex + 1) % pngFiles.length;
+            pngViewer.src = pngFiles[currentIndex];
+            console.log('Changement de l\'image vers : ' + pngViewer.src);
+        }
+
+        // Précharger les images
         pngFiles.forEach(function(src) {
             var img = new Image();
             img.src = src;
             img.onload = function() {
                 console.log('Préchargement terminé pour : ' + src);
             };
-        });
-	
-        var currentIndex = 0;
-        var pngViewer = document.getElementById('pngViewer');
-
-        function changePNG() {
-            currentIndex = (currentIndex + 1) % pngFiles.length;
-            pngViewer.src = pngFiles[currentIndex];
-        }
-
-	// Précharger les images
-        pngFiles.forEach(function(src) {
-            var img = new Image();
-            img.src = src;
         });
 
         // Appeler la fonction pour changer le PNG toutes les 20 secondes
