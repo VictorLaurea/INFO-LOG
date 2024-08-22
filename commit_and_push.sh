@@ -2,11 +2,9 @@
 
 # Chemin vers votre dossier où se trouvent les fichiers
 dossier="P:\Technique\STOCK\INFO-LOG"
-=======
 
 # Ajouter les fichiers à l'index
 git add "$dossier/TCDStock.PNG"
-git add "$dossier/SuiviDossiers.PNG"
 git add "$dossier/index.html"
 
 
