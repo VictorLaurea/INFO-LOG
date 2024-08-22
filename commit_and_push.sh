@@ -9,7 +9,7 @@ dossier="C:\Users\vmorisson\OneDrive - PLENITUDE\Documents\LOGISTIQUE\STOCK\Gest
 git add "$dossier/TCDStock.PNG"
 git add "$dossier/SuiviDossiers.PNG"
 git add "$dossier/index.html"
-git add "$dossier/.gitignore.txt"
+git add "$dossier/.gitignore"
 
 # Commit avec le message "MAJ" suivi de la date et du numéro de version par journée
 date_version=$(date +'%Y-%m-%d-%H-%M-%S') # Format de date personnalisé
