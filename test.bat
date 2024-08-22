@@ -1,6 +1,6 @@
 @echo off
 REM Naviguer vers le répertoire de travail
-cd "//laurea-files/Datas/Technique/STOCK/INFO-LOG"
+cd "\\laurea-files\Datas\Technique\STOCK\INFO-LOG"
 
 REM Ajouter tous les fichiers modifiés à l'index Git
 git add .
