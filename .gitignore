@@ -1,0 +1,15 @@
+# Ignorer les fichiers système et personnels
+*.log
+*.ini
+*.dat
+*.blf
+*.regtrans-ms
+*.tmp
+AppData/
+Saved Games/
+Searches/
+Videos/
+Downloads/
+Contacts/
+Music/
+Favorites/
