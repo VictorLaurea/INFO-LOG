@@ -1,9 +1,7 @@
 #!/bin/bash
 
 # Chemin vers votre dossier où se trouvent les fichiers
-dossier="C:\Users\vmorisson\OneDrive - PLENITUDE\Documents\LOGISTIQUE\STOCK\Gestion Stock\INFO-LOG"
-
-
+dossier="/c/Users/vmorisson/OneDrive - PLENITUDE/Documents/LOGISTIQUE/STOCK/Gestion Stock/INFO-LOG"
 
 # Ajouter les fichiers à l'index
 git add "$dossier/TCDStock.PNG"
@@ -18,6 +16,6 @@ git commit -m "MAJ du $date_version"
 # Pousser les modifications vers le dépôt distant
 git push origin main
 
-#Temporisation
+# Temporisation
 echo "Appuyez sur une touche pour continuer..."
 read -n 1
