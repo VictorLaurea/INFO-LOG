@@ -1,3 +1,6 @@
+# Ajoutez cette ligne en haut de votre script commit_and_push.sh
+exec > >(tee -i /tmp/commit_and_push.log) 2>&1
+
 #!/bin/bash
 
 # Chemin vers votre dossier où se trouvent les fichiers
