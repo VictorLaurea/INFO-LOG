@@ -22,17 +22,44 @@
             align-items: center;
             justify-content: center;
             background-color: white;
+            position: relative;
         }
         .image-container img {
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
         }
+        .button-container {
+            position: absolute;
+            top: 20px;  /* Distance du haut */
+            right: 20px; /* Distance de la droite */
+            display: none;
+        }
+        .button-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button-container button:hover {
+            background-color: #0056b3;
+        }
+        @media (min-width: 1024px) {
+            .button-container {
+                display: block;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="image-container">
         <img id="pngViewer" src="TCDStock.PNG" alt="PNG Viewer">
+        <div class="button-container">
+            <button id="nextButton">Suivant</button>
+        </div>
     </div>
     <script>
         // Tableau des chemins des fichiers PNG à afficher
@@ -43,6 +70,13 @@
 
         var currentIndex = 0;
         var pngViewer = document.getElementById('pngViewer');
+        var nextButton = document.getElementById('nextButton');
+
+        function changePNG() {
+            currentIndex = (currentIndex + 1) % pngFiles.length;
+            pngViewer.src = pngFiles[currentIndex];
+            console.log('Changement de l\'image vers : ' + pngViewer.src);
+        }
 
         // Ajouter un écouteur pour suivre le chargement de l'image
         pngViewer.addEventListener('load', function() {
@@ -54,11 +88,8 @@
             console.error('Erreur de chargement de l\'image : ' + pngViewer.src);
         });
 
-        function changePNG() {
-            currentIndex = (currentIndex + 1) % pngFiles.length;
-            pngViewer.src = pngFiles[currentIndex];
-            console.log('Changement de l\'image vers : ' + pngViewer.src);
-        }
+        // Ajouter un écouteur pour le bouton "Suivant"
+        nextButton.addEventListener('click', changePNG);
 
         // Précharger les images
         pngFiles.forEach(function(src) {
