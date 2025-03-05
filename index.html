@@ -3,22 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INFO LOG</title>
+    <title>Vue plein écran</title>
     <style>
+        /* S'assurer que body et html prennent toute la hauteur de la fenêtre */
         body, html {
             margin: 0;
             padding: 0;
+            height: 100%; /* Important : faire en sorte que body prenne toute la hauteur */
+            overflow: hidden; /* Désactive le défilement */
+        }
+
+        /* Conteneur de l'image */
+        .image-container {
+            width: 100%;
             height: 100%;
-            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: white;
         }
+
+        /* Style de l'image */
         #pngViewer {
-            width: 200%;
-            height: 200%;
-            object-fit: contain; /* Ajuste l'image pour qu'elle soit visible en entier */
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Cela permet de recadrer l'image si nécessaire pour qu'elle couvre tout l'écran */
+            object-position: center; /* S'assurer que l'image est centrée si elle est recadrée */
             cursor: pointer; /* Indiquer que l'image est cliquable */
         }
     </style>
